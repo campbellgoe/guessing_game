@@ -5,14 +5,14 @@ use std::cmp::Ordering;
 fn main() {
     println!("Guessing game. Guess the number.");
 
-    let secret_number = rand::thread_rng().gen_range(1..1001);
+    let secret_number = rand::thread_rng().gen_range(1..=100);
 
     let mut num_guesses: u32 = 0;
 
     loop {
         let mut guess = String::new();
 
-        println!("Please input your guess (between 1 and 1000).");
+        println!("Please input your guess (between 1 and 100).");
         io::stdin()
         .read_line(&mut guess)
         .expect("Failed to read line");
